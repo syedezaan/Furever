@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="FurEver Care — They Deserve Forever Love. A modern frontend pet care platform.">
+    <link rel="icon" href="images/logo.jfif">
+    <title>FurEver Care | They Deserve Forever Love</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+
+    <script>
+        if (localStorage.getItem("fureverLoggedIn") !== "true" || !localStorage.getItem("furEverUser")) {
+            window.location.replace("role-selection.html");
+        }
+    </script>
+</head>
+
+<body>
+
+  
+
+    <div id="ticker" class="ticker">
+        <div class="container d-flex justify-content-between gap-3">
+            <span id="locationText">📍 Detecting location...</span>
+            <span id="clock">--:--:--</span>
+            <span>🐾 Verified Microchip Pet Health Network</span>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg sticky-top fc-nav">
+        <div class="container">
+
+            <a class="navbar-brand fw-800" href="dashboard.html">
+                <i class="bi bi-heart-fill"></i> FurEver <span>Care</span>
+            </a>
+
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav" type="button">
+                <i class="bi bi-list"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="nav">
+
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+
+                    <li>
+                        <a class="nav-link active" href="dashboard.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="nav-link" href="pages/pet-owner.html">
+                            Pet Passport
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="nav-link" href="pages/pet-care.html">
+                            Pet Care
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="nav-link" href="pages/products.html">
+                            Products
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="nav-link" href="pages/veterinarian.html">
+                            Find a Vet
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="nav-link" href="pages/shelter.html">
+                            Adoption
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="nav-link" href="pages/about.html">
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="nav-link" href="pages/contact.html">
+                            Contact
+                        </a>
+                    </li>
+
+                    <li class="d-flex align-items-center gap-2 mt-2 mt-lg-0 ms-lg-2">
+
+                        <button class="btn btn-outline-peach btn-sm btn-spotlight-search px-2"
+                            title="Spotlight Search (Ctrl + K)">
+
+                            <i class="bi bi-search"></i>
+
+                            <span class="d-none d-xl-inline small ms-1 text-muted">
+                                Ctrl+K
+                            </span>
+
+                        </button>
+
+                        <button class="theme-toggle-btn" title="Toggle Dark/Light Theme">
+                            <i class="bi bi-moon-stars-fill"></i>
+                        </button>
+
+                        <button class="btn btn-peach btn-sm btn-view-cart position-relative">
+
+                            <i class="bi bi-bag-heart-fill me-1"></i>
+                            My Care
+
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-badge-count"
+                                style="display: none;">
+                                0
+                            </span>
+
+                        </button>
+
+                        <div id="userAuthArea" class="d-flex align-items-center"></div>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+    </nav>
+
+    <header class="hero section-pad">
+        <div class="hero-particles" id="heroParticles"></div>
+
+        <div class="container">
+
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-6 reveal visible">
+
+                    <span class="eyebrow">
+                        <i class="bi bi-patch-check-fill"></i> Complete Pet Care Ecosystem
+                    </span>
+
+                    <h1>
+                        Happy Pets,<br>
+                        <span class="typed-text">Happy Hearts.</span>
+                        <span class="typed-cursor">|</span>
+                    </h1>
+
+                    <p class="lead">
+                        Everything your companion needs to live a healthier, happier and longer life —
+                        digital pet passport, nutrition calculator, vet consultations, and rescue sanctuary.
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-3">
+
+                        <a class="btn btn-peach btn-lg" href="pages/pet-owner.html">
+                            <i class="bi bi-passport me-1"></i> Create Pet Passport
+                        </a>
+
+                        <a class="btn btn-outline-peach btn-lg" href="pages/veterinarian.html">
+                            <i class="bi bi-heart-pulse me-1"></i> Book Vet Visit
+                        </a>
+
+                    </div>
+
+                    <div class="hero-stats mt-4">
+                        <div><strong>24/7</strong><small>Emergency Hotline</small></div>
+                        <div><strong>3</strong><small>Care Pathways</small></div>
+                        <div><strong>100%</strong><small>No-Kill Sanctuary</small></div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6 reveal visible">
+
+                    <div class="hero-art">
+
+                        <div class="blob"></div>
+
+                        <div class="pet-placeholder">
+
+                            <i class="bi bi-heart-fill"></i>
+                            <i class="bi bi-stars"></i>
+
+                            <div class="pet-face">
+                                <img src="./images/cat.jfif" alt="Happy pet cat" class="hero-pet-img">
+                            </div>
+
+                            <span>
+                                They Deserve<br>
+                                <b>Forever Love</b>
+                            </span>
+
+                        </div>
+
+                        <div class="float-card fc-one">
+                            <i class="bi bi-shield-heart"></i>
+                            <span>Verified<br><b>Passport</b></span>
+                        </div>
+
+                        <div class="float-card fc-two">
+                            <i class="bi bi-emoji-smile"></i>
+                            <span>Happy<br><b>Companions</b></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </header>
+
+    <div class="marquee-wrap">
+
+        <div class="marquee-track">
+
+            <span><i class="bi bi-shield-heart"></i> Verified Digital Pet Passport</span>
+            <span><i class="bi bi-heart-pulse"></i> 24/7 Emergency Vet Support</span>
+            <span><i class="bi bi-house-heart"></i> 100% No-Kill Sanctuary</span>
+            <span><i class="bi bi-egg-fried"></i> Smart Nutrition Calculator</span>
+            <span><i class="bi bi-shop"></i> Curated Pet Essentials</span>
+            <span><i class="bi bi-people"></i> 12,584+ Happy Pet Parents</span>
+
+            <span><i class="bi bi-shield-heart"></i> Verified Digital Pet Passport</span>
+            <span><i class="bi bi-heart-pulse"></i> 24/7 Emergency Vet Support</span>
+            <span><i class="bi bi-house-heart"></i> 100% No-Kill Sanctuary</span>
+            <span><i class="bi bi-egg-fried"></i> Smart Nutrition Calculator</span>
+            <span><i class="bi bi-shop"></i> Curated Pet Essentials</span>
+            <span><i class="bi bi-people"></i> 12,584+ Happy Pet Parents</span>
+
+        </div>
+
+    </div>
+
+    <div class="pet-slider-heading">
+
+        <span>OUR HAPPY FRIENDS</span>
+
+        <h2>Meet the Faces Behind the Tails</h2>
+
+        <p>
+            A glimpse of the adorable companions who bring joy, love &amp; happiness.
+        </p>
+
+    </div>
+
+    <div class="pet-slider-wrap">
+
+        <div class="pet-slider-track" id="petSliderTrack"></div>
+
+        <button class="pet-slider-arrow pet-prev" id="petPrevBtn" aria-label="Previous">
+            &#8592;
+        </button>
+
+        <button class="pet-slider-arrow pet-next" id="petNextBtn" aria-label="Next">
+            &#8594;
+        </button>
+
+        <div class="pet-slider-dots" id="petSliderDots"></div>
+
+    </div>
+
+    <section class="role-section section-pad-sm" id="portal">
+
+        <div class="container">
+
+            <div class="text-center mb-4 reveal visible">
+
+                <span class="eyebrow">CHOOSE YOUR PATHWAY</span>
+
+                <h2>How can we help you today?</h2>
+
+                <p>
+                    Select your dedicated FurEver Care experience tailored for pet parents,
+                    clinicians, or rescue supporters.
+                </p>
+
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+
+                    <div class="role-card reveal visible" data-role="owner">
+
+                        <div class="role-icon">
+                            <i class="bi bi-person-heart"></i>
+                        </div>
+
+                        <h3>Pet Owner</h3>
+
+                        <p>
+                            Generate 3D digital pet passports with manual photo uploads,
+                            feeding calculators, and grooming trackers.
+                        </p>
+
+                        <a class="btn btn-darkbrown role-btn" href="pages/pet-owner.html">
+                            Open Passport Portal
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="role-card reveal visible" data-role="vet">
+
+                        <div class="role-icon">
+                            <i class="bi bi-heart-pulse"></i>
+                        </div>
+
+                        <h3>Veterinarian</h3>
+
+                        <p>
+                            Interactive appointment booking, surgical case studies,
+                            and precision clinical dosage calculations.
+                        </p>
+
+                        <a class="btn btn-darkbrown role-btn" href="pages/veterinarian.html">
+                            Open Vet Portal
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="role-card reveal visible" data-role="shelter">
+
+                        <div class="role-icon">
+                            <i class="bi bi-house-heart"></i>
+                        </div>
+
+                        <h3>Animal Shelter</h3>
+
+                        <p>
+                            Explore adoptable pets, community drives, adoption applications,
+                            and emergency shelter expansion goals.
+                        </p>
+
+                        <a class="btn btn-darkbrown role-btn" href="pages/shelter.html">
+                            Open Sanctuary
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="roleArea" class="mt-4"></div>
+
+        </div>
+
+    </section>
+
+    <section class="feature-strip">
+
+        <div class="container">
+
+            <div class="row g-3">
+
+                <div class="col-6 col-lg-3">
+                    <i class="bi bi-heart-pulse"></i>
+                    <span>
+                        Vet Consultation
+                        <small>Professional diagnostics</small>
+                    </span>
+                </div>
+
+                <div class="col-6 col-lg-3">
+                    <i class="bi bi-egg-fried"></i>
+                    <span>
+                        Pet Nutrition
+                        <small>RER energy calculator</small>
+                    </span>
+                </div>
+
+                <div class="col-6 col-lg-3">
+                    <i class="bi bi-scissors"></i>
+                    <span>
+                        Care Routine
+                        <small>Weekly checklist tracker</small>
+                    </span>
+                </div>
+
+                <div class="col-6 col-lg-3">
+                    <i class="bi bi-telephone-outbound"></i>
+                    <span>
+                        Emergency Help
+                        <small>24/7 direct helplines</small>
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="section-pad">
+
+        <div class="container">
+
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-6 reveal visible">
+
+                    <span class="eyebrow">WHY FUREVER CARE</span>
+
+                    <h2>
+                        One caring space for every stage of your pet's life.
+                    </h2>
+
+                    <p>
+                        From microchipped digital passports to everyday nutritional guidance
+                        and emergency support, FurEver Care brings practical tools together
+                        into a warm, unified experience.
+                    </p>
+
+                    <div class="check-list">
+
+                        <p>
+                            <i class="bi bi-check-circle-fill"></i>
+                            3D Holographic Pet Passport with manual photo uploads
+                        </p>
+
+                        <p>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Searchable products, cart manager, and adoption matches
+                        </p>
+
+                        <p>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Live slot bookings, dosage tools, and 24/7 helplines
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6 reveal visible role-card">
+
+                    <div class="info-grid">
+
+                        <div>
+                            <i class="bi bi-journal-medical"></i>
+                            <h4>Care Guides</h4>
+                            <p>Feeding portions, health tips, and grooming tracker.</p>
+                        </div>
+
+                        <div>
+                            <i class="bi bi-shop"></i>
+                            <h4>Pet Products</h4>
+                            <p>Curated supplies with live cart checkout.</p>
+                        </div>
+
+                        <div>
+                            <i class="bi bi-geo-alt"></i>
+                            <h4>Local Help</h4>
+                            <p>Location-aware sanctuary support.</p>
+                        </div>
+
+                        <div>
+                            <i class="bi bi-house-heart"></i>
+                            <h4>Adoption</h4>
+                            <p>Find companions waiting for forever homes.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="counter-section">
+
+        <div class="container text-center">
+
+            <span class="eyebrow light">OUR GROWING COMMUNITY</span>
+
+            <div class="counter-number" id="visitorCounter">
+                12,584
+            </div>
+
+            <p>Pet Parents Visited Today</p>
+
+        </div>
+
+    </section>
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="row g-4">
+
+                <div class="col-lg-4">
+
+                    <a class="footer-brand" href="#">
+                        <i class="bi bi-heart-fill"></i> FurEver Care
+                    </a>
+
+                    <p>
+                        They Deserve Forever Love. A complete caring pet ecosystem.
+                    </p>
+
+                </div>
+
+                <div class="col-6 col-lg-2">
+
+                    <h5>Explore</h5>
+
+                    <a href="pages/pet-care.html">Pet Care</a>
+                    <a href="pages/products.html">Products</a>
+                    <a href="pages/veterinarian.html">Find a Vet</a>
+
+                </div>
+
+                <div class="col-6 col-lg-2">
+
+                    <h5>Community</h5>
+
+                    <a href="pages/shelter.html">Adoption</a>
+                    <a href="pages/about.html">About</a>
+                    <a href="pages/contact.html">Contact</a>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <h5>Need urgent help?</h5>
+
+                    <p>
+                        Instant simulated connection to poison control & trauma ICU.
+                    </p>
+
+                    <a class="btn btn-peach" href="pages/emergency.html">
+                        Emergency Help
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="d-flex flex-wrap justify-content-between gap-2">
+
+                <small>© 2026 All right reserved.</small>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+
+    <button id="topBtn" class="top-btn" aria-label="Scroll to top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/feedback.js"></script>
+    <script src="js/geolocation.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/pet-owner.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/shelter.js"></script>
+    <script src="js/typewriter.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/veterinarian.js"></script>
+    <script src="js/effects.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/petslider.js"></script>
+    <script src="js/auth.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Rescue Sanctuary & Adoption Hub | FurEver Care</title>
+    <link rel="icon" href="images/logo.jfif">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+</head>
+
+<body>
+
+
+
+    <div class="ticker">
+        <div class="container d-flex justify-content-between gap-3">
+            <span id="locationText">📍 Detecting location...</span>
+            <span id="clock">--:--:--</span>
+            <span>🐾 100% No-Kill Verified Rescue Sanctuary</span>
+        </div>
+    </div>
+
+
+    <nav class="navbar navbar-expand-lg sticky-top fc-nav">
+        <div class="container">
+            <a class="navbar-brand fw-800" href="../dashboard.html">
+                <i class="bi bi-heart-fill"></i> FurEver <span>Care</span>
+            </a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+        <i class="bi bi-list"></i>
+      </button>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                    <li><a class="nav-link" href="../dashboard.html">Home</a></li>
+                    <li><a class="nav-link" href="pet-owner.html">Pet Passport</a></li>
+                    <li><a class="nav-link" href="pet-care.html">Pet Care</a></li>
+                    <li><a class="nav-link" href="products.html">Products</a></li>
+                    <li><a class="nav-link" href="veterinarian.html">Find a Vet</a></li>
+                    <li><a class="nav-link active" href="shelter.html">Adoption</a></li>
+                    <li><a class="nav-link" href="about.html">About Us</a></li>
+                    <li><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li>
+                        <button class="btn btn-peach btn-sm btn-view-cart position-relative ms-lg-2">
+              <i class="bi bi-bag-heart-fill me-1"></i> My Care
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-badge-count" style="display: none;">0</span>
+            </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <section class="page-hero">
+        <div class="container">
+            <span class="eyebrow"><i class="bi bi-house-heart"></i> ANIMAL SANCTUARY & ADOPTION</span>
+            <h1>Find a forever friend.</h1>
+            <p>Meet wonderful rescued pets looking for their next safe, loving home.</p>
+        </div>
+    </section>
+
+
+    <section class="section-pad">
+        <div class="container">
+
+            <div class="filter-bar mb-4">
+                <div class="row g-2">
+                    <div class="col-md-6 col-lg-3">
+                        <label class="form-label small fw-bold mb-1">Search Pets</label>
+                        <input id="adoptionSearch" class="form-control form-control-sm adopt-filter" placeholder="Search by name, breed...">
+                    </div>
+                    <div class="col-md-6 col-lg-2">
+                        <label class="form-label small fw-bold mb-1">Species</label>
+                        <select id="typeFilter" class="form-select form-select-sm adopt-filter">
+              <option value="all">All Species</option>
+              <option value="Dog">Dogs</option>
+              <option value="Cat">Cats</option>
+              <option value="Rabbit">Rabbits</option>
+            </select>
+                    </div>
+                    <div class="col-md-6 col-lg-2">
+                        <label class="form-label small fw-bold mb-1">Life Stage</label>
+                        <select id="ageFilter" class="form-select form-select-sm adopt-filter">
+              <option value="all">All Ages</option>
+              <option value="Young">Young (<2 yrs)</option>
+              <option value="Adult">Adult (2+ yrs)</option>
+            </select>
+                    </div>
+                    <div class="col-md-6 col-lg-2">
+                        <label class="form-label small fw-bold mb-1">Breed</label>
+                        <select id="breedFilter" class="form-select form-select-sm adopt-filter">
+              <option value="all">All Breeds</option>
+              <option value="Golden Retriever">Golden Retriever</option>
+              <option value="Domestic Shorthair">Domestic Shorthair</option>
+              <option value="German Shepherd">German Shepherd</option>
+              <option value="Persian">Persian Mix</option>
+              <option value="Mini Lop">Mini Lop</option>
+              <option value="Beagle">Beagle Mix</option>
+            </select>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <label class="form-label small fw-bold mb-1">Sanctuary City</label>
+                        <select id="locationFilter" class="form-select form-select-sm adopt-filter">
+              <option value="all">All Locations</option>
+              <option value="Karachi">Karachi</option>
+              <option value="Lahore">Lahore</option>
+              <option value="Islamabad">Islamabad</option>
+            </select>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="adoptionGrid" class="row g-4">
+                <div class="col-12 text-center py-5">
+                    <div class="spinner-border text-peach" role="status">
+                        <span class="visually-hidden">Loading adoptable pets...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section-pad-sm bg-white">
+        <div class="container">
+            <div class="text-center mb-4">
+                <span class="eyebrow"><i class="bi bi-heart-circle-check"></i> HAPPY ENDINGS</span>
+                <h2>Adoption Success Stories</h2>
+            </div>
+            <div id="stories" class="row g-4"></div>
+        </div>
+    </section>
+
+
+    <section class="section-pad">
+        <div class="container">
+            <div class="row g-4">
+
+                <div class="col-lg-7">
+                    <div class="content-card p-4 p-md-5 h-100">
+                        <span class="eyebrow mb-1">SANCTUARY OUTREACH</span>
+                        <h2 class="h4 fw-bold text-brown mb-3">
+                            <i class="bi bi-calendar-event text-peach me-2"></i> Upcoming Rescue Drives & Camps
+                        </h2>
+                        <div id="events" class="row g-3"></div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-5">
+                    <div class="content-card p-4 p-md-5 h-100">
+                        <span class="eyebrow mb-1">COMMUNITY SUPPORT</span>
+                        <h2 class="h4 fw-bold text-brown mb-3">
+                            <i class="bi bi-gift-fill text-success me-2"></i> Winter Shelter Expansion Goal
+                        </h2>
+
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between small fw-bold mb-1">
+                                <span>Raised: <strong class="text-success" id="donationRaisedText">$18,450</strong></span>
+                                <span class="text-muted">Target: $25,000</span>
+                            </div>
+                            <div class="progress" style="height: 14px; border-radius: 10px;">
+                                <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" id="donationProgressBar" style="width: 74%;">74%</div>
+                            </div>
+                        </div>
+
+                        <p class="small text-muted mb-3">
+                            Help us build heated recovery kennels for 40 winter rescue puppies and senior cats in need.
+                        </p>
+
+                        <div class="input-group input-group-sm mb-3">
+                            <span class="input-group-text bg-light">$</span>
+                            <input type="number" id="donateAmountInput" class="form-control" value="25" min="5" step="5">
+                            <button class="btn btn-peach px-3 fw-bold" id="btnQuickDonate">Donate Now</button>
+                        </div>
+
+                        <div class="p-3 bg-light rounded-3 border">
+                            <h6 class="fw-bold text-brown small mb-1"><i class="bi bi-clock me-1"></i> Sanctuary Visiting Hours</h6>
+                            <p class="small text-muted mb-1"><strong>Mon - Fri:</strong> 10:00 AM - 06:00 PM</p>
+                            <p class="small text-muted mb-0"><strong>Weekends:</strong> 09:00 AM - 07:00 PM (Walk-ins Welcome)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="modal fade" id="adoptionModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content" style="border-radius: 20px; border: 1px solid var(--light);">
+                <div class="modal-header border-bottom">
+                    <h5 class="modal-title fw-bold text-brown">
+                        <i class="bi bi-heart-fill text-peach me-2"></i> Meet & Adopt Companion Application
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-3">
+                        <div class="col-md-4 text-center">
+                            <img src="" id="adoptModalPetImg" alt="Pet" class="rounded-4 img-fluid mb-2 border shadow-sm" style="max-height: 180px; object-fit: cover;">
+                            <h4 class="h5 fw-bold text-brown mb-0" id="adoptModalPetName">Barnaby</h4>
+                            <small class="text-muted d-block mb-1" id="adoptModalPetInfo">Golden Retriever • 2 yrs</small>
+                            <span class="badge bg-success" id="adoptModalFee">$75 Fee</span>
+                        </div>
+                        <div class="col-md-8">
+                            <p class="small text-muted mb-3" id="adoptModalPetDesc">Description text...</p>
+
+                            <div class="row g-2">
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Your Full Name</label>
+                                    <input type="text" id="adoptApplicantName" class="form-control form-control-sm" value="Sarah Jenkins">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Phone Number</label>
+                                    <input type="tel" id="adoptApplicantPhone" class="form-control form-control-sm" value="+1 (555) 234-5678">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Housing Environment</label>
+                                    <select id="adoptApplicantHousing" class="form-select form-select-sm">
+                    <option value="Single Family Home (Fenced Yard)" selected>Single Family Home (Fenced Yard)</option>
+                    <option value="Apartment / Condo">Apartment / Condo</option>
+                    <option value="Townhouse">Townhouse</option>
+                  </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Existing Pets in Home</label>
+                                    <select class="form-select form-select-sm">
+                    <option value="0">No other pets</option>
+                    <option value="1" selected>1 Dog / Cat</option>
+                    <option value="2+">2+ Companion animals</option>
+                  </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-top">
+                    <button type="button" class="btn btn-outline-peach btn-sm" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-peach btn-sm px-4" id="btnSubmitAdoption">
+            <i class="bi bi-heart-fill me-1"></i> Submit Adoption Request
+          </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <a class="footer-brand" href="../dashboard.html"><i class="bi bi-heart-fill"></i> FurEver Care</a>
+                    <p>They Deserve Forever Love. A complete caring pet ecosystem.</p>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5>Explore</h5>
+                    <a href="pet-care.html">Pet Care</a>
+                    <a href="products.html">Products</a>
+                    <a href="veterinarian.html">Find a Vet</a>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5>Community</h5>
+                    <a href="shelter.html">Adoption</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Emergency</h5>
+                    <a class="btn btn-peach" href="emergency.html">Emergency Help</a>
+                </div>
+            </div>
+            <hr>
+            <small>© 2026 All right reserved</small>
+        </div>
+    </footer>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+    <button id="topBtn" class="top-btn"><i class="bi bi-arrow-up"></i></button>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/clock.js"></script>
+    <script src="../js/geolocation.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/shelter.js"></script>
+    <script src="../js/effects.js"></script>
+    <script src="../js/chatbot.js"></script>
+</body>
+
+</html>

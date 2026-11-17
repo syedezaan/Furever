@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Resting Energy Requirement (RER)",
+    "icon": "bi-egg-fried",
+    "text": "Calculate daily calories = 70 × (Weight in kg)^0.75 multiplied by life stage factor to prevent obesity."
+  },
+  {
+    "title": "Hydration Balance",
+    "icon": "bi-droplet-half",
+    "text": "Dogs need ~60mL of water per kg daily; cats need ~50mL. Provide clean, filtered water at all times."
+  },
+  {
+    "title": "Dental Prophylaxis",
+    "icon": "bi-shield-check",
+    "text": "80% of pets over age 3 show signs of periodontal disease. Brush teeth 3x weekly with enzymatic toothpaste."
+  }
+]

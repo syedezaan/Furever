@@ -1,0 +1,46 @@
+[
+  {
+    "title": "Canine CCL Rupture & TPLO Surgery",
+    "patient": "Rocky (Labrador, 5 y/o)",
+    "date": "Aug 2026",
+    "badge": "Orthopedic",
+    "badgeClass": "badge-soft",
+    "complaint": "Acute non-weight bearing lameness on left hind leg following vigorous ball fetch.",
+    "treatment": "Performed Tibial Plateau Leveling Osteotomy (TPLO) using 3.5mm locking compression plate.",
+    "vitals": [
+      {"param": "Lameness Score", "before": "4/5 (Severe)", "after": "0/5 (Resolved)"},
+      {"param": "Joint Range of Motion", "before": "85° (Pain)", "after": "135° (Normal)"},
+      {"param": "Thigh Muscle Circ.", "before": "38 cm", "after": "44 cm (Post-Rehab)"}
+    ],
+    "outcome": "Full functional weight-bearing restored. Radiographic bone union confirmed."
+  },
+  {
+    "title": "Feline Chronic Kidney Disease (Stage II)",
+    "patient": "Shadow (Domestic Cat, 11 y/o)",
+    "date": "Jul 2026",
+    "badge": "Internal Medicine",
+    "badgeClass": "badge-soft",
+    "complaint": "Polyuria, polydipsia, weight loss, and reduced grooming over 2 months.",
+    "treatment": "Prescription renal diet, Telmisartan for hypertension, and daily Omega-3 EPA/DHA.",
+    "vitals": [
+      {"param": "Serum Creatinine", "before": "2.6 mg/dL", "after": "1.8 mg/dL"},
+      {"param": "Systolic BP", "before": "175 mmHg", "after": "132 mmHg (Stable)"},
+      {"param": "Body Weight", "before": "3.8 kg", "after": "4.2 kg (Gained)"}
+    ],
+    "outcome": "Blood pressure stabilized. Creatinine improved to Stage I-II transition baseline."
+  },
+  {
+    "title": "Severe Atopic Dermatitis & Cytopoint mAb",
+    "patient": "Daisy (Golden Retriever, 3 y/o)",
+    "date": "May 2026",
+    "badge": "Dermatology",
+    "badgeClass": "badge-soft",
+    "complaint": "Chronic pruritus, pedal lick granulomas, and ventral abdominal erythema.",
+    "treatment": "Lokivetmab (Cytopoint) mAb injection + chlorhexidine medicated baths 2x weekly.",
+    "vitals": [
+      {"param": "Pruritus VAS Score", "before": "9/10 (Severe)", "after": "1/10 (Occasional)"},
+      {"param": "Skin Lesion CADESI-4", "before": "58 (Severe)", "after": "6 (Mild/Resolved)"}
+    ],
+    "outcome": "Pruritus reduced within 24 hours. Skin barrier restored at 4-week followup."
+  }
+]

@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Digital Pet Passport & Profile | FurEver Care</title>
+    <link rel="icon" href="images/logo.jfif">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+</head>
+
+<body>
+
+
+
+
+    <div class="ticker">
+        <div class="container d-flex justify-content-between gap-3">
+            <span id="locationText">Detecting location...</span>
+            <span id="clock">--:--:--</span>
+            <span> Verified Microchip Pet Health Passport</span>
+        </div>
+    </div>
+
+
+    <nav class="navbar navbar-expand-lg sticky-top fc-nav">
+        <div class="container">
+            <a class="navbar-brand fw-800" href="../dashboard.html">
+                <i class="bi bi-heart-fill"></i> FurEver <span>Care</span>
+            </a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+        <i class="bi bi-list"></i>
+      </button>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                    <li><a class="nav-link" href="../dashboard.html">Home</a></li>
+                    <li><a class="nav-link active" href="pet-owner.html">Pet Passport</a></li>
+                    <li><a class="nav-link" href="pet-care.html">Pet Care</a></li>
+                    <li><a class="nav-link" href="products.html">Products</a></li>
+                    <li><a class="nav-link" href="veterinarian.html">Find a Vet</a></li>
+                    <li><a class="nav-link" href="shelter.html">Adoption</a></li>
+                    <li><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="d-flex align-items-center gap-2 mt-2 mt-lg-0 ms-lg-2">
+                        <button class="btn btn-outline-peach btn-sm btn-spotlight-search px-2" title="Spotlight Search (Ctrl + K)">
+              <i class="bi bi-search"></i> <span class="d-none d-xl-inline small ms-1 text-muted">Ctrl+K</span>
+            </button>
+                        <button class="theme-toggle-btn" title="Toggle Dark/Light Theme">
+              <i class="bi bi-moon-stars-fill"></i>
+            </button>
+                        <button class="btn btn-peach btn-sm btn-view-cart position-relative">
+              <i class="bi bi-bag-heart-fill me-1"></i> My Care
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-badge-count" style="display: none;">0</span>
+            </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <section class="page-hero">
+        <div class="container">
+            <span class="eyebrow"><i class="bi bi-passport"></i> DIGITAL PET PASSPORT</span>
+            <h1>Your companion's verified ID & care passport.</h1>
+            <p>Upload a photo from your device, choose presets, and generate a 3D holographic digital passport card.</p>
+        </div>
+    </section>
+
+
+    <section class="section-pad">
+        <div class="container">
+            <div class="row g-4 align-items-start" id="petCardAnchor">
+
+
+                <div class="col-lg-6">
+                    <div class="content-card p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h2 class="h4 mb-0 text-brown">
+                                <i class="bi bi-card-heading text-peach me-2"></i> Create / Update Pet Passport
+                            </h2>
+                            <button type="button" class="btn btn-sm btn-outline-peach py-1 px-2" id="btnResetSample" title="Load sample pet data">
+                <i class="bi bi-arrow-counterclockwise me-1"></i> Sample Pet
+              </button>
+                        </div>
+
+                        <form id="petProfileForm" novalidate>
+                            <div class="row g-3">
+
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Pet Name *</label>
+                                    <input type="text" id="petName" name="name" required class="form-control form-control-sm" value="Maximus" placeholder="e.g. Bella, Charlie">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Species *</label>
+                                    <select id="petSpecies" name="species" required class="form-select form-select-sm">
+                    <option value="Dog" selected>Dog (Canine)</option>
+                    <option value="Cat">Cat (Feline)</option>
+                    <option value="Rabbit">Rabbit (Lagomorph)</option>
+                    <option value="Bird">Bird (Avian)</option>
+                    <option value="Other">Other Companion Animal</option>
+                  </select>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Breed *</label>
+                                    <input type="text" id="petBreed" name="breed" required class="form-control form-control-sm" value="Golden Retriever" placeholder="e.g. Persian Cat, Labrador">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Gender</label>
+                                    <select id="petGender" name="gender" class="form-select form-select-sm">
+                    <option value="Male" selected>Male (Intact)</option>
+                    <option value="Female">Female (Intact)</option>
+                    <option value="Neutered Male">Neutered Male</option>
+                    <option value="Spayed Female">Spayed Female</option>
+                  </select>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Age</label>
+                                    <input type="text" id="petAge" name="age" class="form-control form-control-sm" value="2.5 Years" placeholder="e.g. 3 Years, 6 Months">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Weight</label>
+                                    <input type="text" id="petWeight" name="weight" class="form-control form-control-sm" value="31 kg" placeholder="e.g. 31 kg, 4.5 kg">
+                                </div>
+
+
+                                <div class="col-12">
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <label class="form-label small fw-bold mb-0">Microchip RFID Tag ID</label>
+                                        <button type="button" class="btn btn-link btn-sm p-0 text-decoration-none text-peach" id="btnGenChip" style="font-size: 0.78rem;">
+                      <i class="bi bi-magic me-1"></i> Auto-Generate Chip ID
+                    </button>
+                                    </div>
+                                    <input type="text" id="petChip" name="chip" class="form-control form-control-sm font-monospace" value="985-1410-0294-817" placeholder="e.g. 985-1410-0294-817">
+                                </div>
+
+
+                                <div class="col-12">
+                                    <div class="p-3 bg-light rounded-3 border">
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <label class="form-label small fw-bold text-brown mb-0">
+                        <i class="bi bi-camera text-peach me-1"></i> Pet Picture (Choose / Upload Option)
+                      </label>
+                                            <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25" style="font-size: 0.72rem;">Live Preview</span>
+                                        </div>
+
+
+                                        <div class="btn-group btn-group-sm w-100 mb-3" role="group" aria-label="Photo Input Mode">
+                                            <input type="radio" class="btn-check" name="photoSourceMode" id="photoModeFile" value="file" checked>
+                                            <label class="btn btn-outline-peach" for="photoModeFile">
+                        <i class="bi bi-upload me-1"></i> Upload File
+                      </label>
+
+                                            <input type="radio" class="btn-check" name="photoSourceMode" id="photoModeUrl" value="url">
+                                            <label class="btn btn-outline-peach" for="photoModeUrl">
+                        <i class="bi bi-link-45deg me-1"></i> Web Image URL
+                      </label>
+
+                                            <input type="radio" class="btn-check" name="photoSourceMode" id="photoModePreset" value="preset">
+                                            <label class="btn btn-outline-peach" for="photoModePreset">
+                        <i class="bi bi-images me-1"></i> Cute Presets
+                      </label>
+                                        </div>
+
+                                        <div class="row g-2 align-items-center">
+                                            <div class="col-8 col-sm-9">
+
+                                                <div id="photoContainerFile">
+                                                    <input type="file" id="petPhotoFile" class="form-control form-control-sm" accept="image/*">
+                                                    <small class="text-muted d-block mt-1" style="font-size: 0.72rem;">
+                            <i class="bi bi-folder2-open me-1"></i> Choose image from PC or Mobile.
+                          </small>
+                                                </div>
+
+
+                                                <div id="photoContainerUrl" style="display: none;">
+                                                    <input type="url" id="petPhotoUrl" class="form-control form-control-sm" placeholder="https://images.unsplash.com/...">
+                                                    <small class="text-muted d-block mt-1" style="font-size: 0.72rem;">
+                            <i class="bi bi-globe me-1"></i> Direct link to image file.
+                          </small>
+                                                </div>
+
+
+                                                <div id="photoContainerPreset" style="display: none;">
+                                                    <select id="petPhotoPreset" class="form-select form-select-sm">
+                            <option value="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=600&q=80" selected>Golden Retriever (Dog)</option>
+                            <option value="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=600&q=80">British Shorthair (Cat)</option>
+                            <option value="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=600&q=80">French Bulldog (Dog)</option>
+                            <option value="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?auto=format&fit=crop&w=600&q=80">Holland Lop Bunny (Rabbit)</option>
+                            <option value="https://images.unsplash.com/photo-1503256207526-0d5d80fa2f47?auto=format&fit=crop&w=600&q=80">Australian Shepherd</option>
+                            <option value="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=600&q=80">Calico Domestic Cat</option>
+                          </select>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-4 col-sm-3 text-center">
+                                                <div class="pet-form-preview-box">
+                                                    <img id="petPhotoPreviewImg" src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=600&q=80" alt="Preview" class="img-fluid rounded-3 border shadow-sm">
+                                                    <span class="pet-form-preview-label">Preview</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Owner / Guardian Name</label>
+                                    <input type="text" id="petOwnerName" name="owner" class="form-control form-control-sm" value="Sarah Jenkins" placeholder="Guardian Name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Emergency Phone</label>
+                                    <input type="text" id="petEmergencyPhone" name="contact" class="form-control form-control-sm" value="+1 (555) 234-5678" placeholder="+1 (555) 000-0000">
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Primary Vet Clinic</label>
+                                    <input type="text" id="petVetClinic" name="vet" class="form-control form-control-sm" value="FurEver Central Animal Hospital" placeholder="Clinic Name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">Vaccination Status</label>
+                                    <select id="petVaccination" name="vaccine" class="form-select form-select-sm">
+                    <option value="Up to Date (Core & Rabies Verified)" selected>Up to Date (Core & Rabies)</option>
+                    <option value="Rabies Vaccinated (Booster Due Soon)">Rabies Vaccinated (Booster Due)</option>
+                    <option value="Puppy/Kitten Series in Progress">Puppy/Kitten Series in Progress</option>
+                    <option value="Needs Review">Needs Review</option>
+                  </select>
+                                </div>
+
+
+                                <div class="col-12">
+                                    <label class="form-label small fw-bold">Allergies & Medical Warnings</label>
+                                    <input type="text" id="petAllergies" name="allergies" class="form-control form-control-sm" value="Chicken sensitive, Needs weekly ear cleaning" placeholder="e.g. Pollen allergy, Sensitive digestion">
+                                </div>
+
+
+                                <div class="col-12 text-end mt-3 d-flex justify-content-between align-items-center">
+                                    <small class="text-muted"><i class="bi bi-shield-check text-success me-1"></i> Saved in browser storage</small>
+                                    <button type="submit" class="btn btn-peach btn-sm px-4">
+                    <i class="bi bi-patch-check-fill me-1"></i> Update & Generate Passport
+                  </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-6 d-flex flex-column align-items-center justify-content-center">
+                    <div class="pet-id-card-wrapper w-100">
+                        <div class="pet-id-card" id="printablePetCard" title="Tap or click card to flip between Front and Back sides">
+
+                        </div>
+                    </div>
+
+
+                    <div class="d-flex flex-wrap align-items-center justify-content-center gap-2 mt-3">
+                        <button class="btn btn-sm btn-darkbrown rounded-pill px-3" id="btnFlipCard">
+              <i class="bi bi-arrow-repeat text-peach me-1"></i> <span id="flipCardLabel">Flip Card</span>
+            </button>
+                        <button class="btn btn-sm btn-peach rounded-pill px-3 shadow-sm" id="btnDownloadCardPng">
+              <i class="bi bi-download me-1"></i> Download Smart ID (.PNG)
+            </button>
+                        <button class="btn btn-sm btn-outline-peach rounded-pill px-3" id="btnPrintCard">
+              <i class="bi bi-printer me-1"></i> Print
+            </button>
+                    </div>
+
+                    <div class="text-center mt-2">
+                        <small class="text-muted"><i class="bi bi-shield-fill-check text-success me-1"></i> Encrypted Holographic Microchip Profile • Tap Card to Flip</small>
+                    </div>
+
+
+                    <div class="w-100 mt-4">
+                        <div class="row g-2">
+                            <div class="col-6">
+                                <a class="content-card d-block p-3 text-center" href="pet-care.html">
+                                    <span class="fs-5 d-block mb-1">🍽️</span>
+                                    <b class="d-block small text-brown">Feeding & Diet</b>
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a class="content-card d-block p-3 text-center" href="veterinarian.html">
+                                    <span class="fs-5 d-block mb-1">🩺</span>
+                                    <b class="d-block small text-brown">Book Vet Slot</b>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <a class="footer-brand" href="../dashboard.html"><i class="bi bi-heart-fill"></i> FurEver Care</a>
+                    <p>They Deserve Forever Love. A complete caring pet ecosystem.</p>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5>Explore</h5>
+                    <a href="pet-care.html">Pet Care</a>
+                    <a href="products.html">Products</a>
+                    <a href="veterinarian.html">Find a Vet</a>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5>Community</h5>
+                    <a href="shelter.html">Adoption</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Emergency</h5>
+                    <a class="btn btn-peach" href="emergency.html">Emergency Help</a>
+                </div>
+            </div>
+            <hr>
+            <small>© 2026 All right reserved</small>
+        </div>
+    </footer>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+    <button id="topBtn" class="top-btn"><i class="bi bi-arrow-up"></i></button>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/clock.js"></script>
+    <script src="../js/geolocation.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/pet-owner.js"></script>
+    <script src="../js/effects.js"></script>
+    <script src="../js/chatbot.js"></script>
+</body>
+
+</html>

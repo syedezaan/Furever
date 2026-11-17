@@ -1,0 +1,37 @@
+[
+  {
+    "name": "ASPCA Animal Poison Control",
+    "number": "+1 (888) 426-4435",
+    "purpose": "24/7 emergency toxin, poison & medication guidance",
+    "category": "Poison Control",
+    "status": "Online & Active"
+  },
+  {
+    "name": "FurEver Metro 24/7 Trauma ICU",
+    "number": "+1 (800) 555-PET911",
+    "purpose": "Accident, critical trauma and emergency veterinary admissions",
+    "category": "Trauma Hospital",
+    "status": "24/7 On-Call"
+  },
+  {
+    "name": "Rapid Paws Mobile Pet Ambulance",
+    "number": "+1 (800) 729-PAWS",
+    "purpose": "Emergency mobile ICU oxygen transport & paramedic dispatch",
+    "category": "Ambulance",
+    "status": "Fleet Active"
+  },
+  {
+    "name": "Wildlife & Exotic Emergency Rescue",
+    "number": "+1 (800) 448-WILD",
+    "purpose": "Specialized care for injured birds, reptiles and urban wildlife",
+    "category": "Wildlife",
+    "status": "Available"
+  },
+  {
+    "name": "Pet Loss & Crisis Counseling Warmline",
+    "number": "+1 (800) 273-HOPE",
+    "purpose": "Free emotional and grief support for pet parents in distress",
+    "category": "Support",
+    "status": "Counselors On-Call"
+  }
+]

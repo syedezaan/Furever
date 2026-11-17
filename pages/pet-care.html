@@ -1,0 +1,1645 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Pet Care & Interactive Health Hub | FurEver Care</title>
+    <link rel="icon" href="images/logo.jfif">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top fc-nav">
+        <div class="container">
+
+            <a class="navbar-brand fw-800" href="../dashboard.html">
+                <i class="bi bi-heart-fill"></i> FurEver <span>Care</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-list"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+
+                    <li><a class="nav-link" href="../dashboard.html">Home</a></li>
+                    <li><a class="nav-link" href="pet-owner.html">Pet Passport</a></li>
+                    <li><a class="nav-link active" href="pet-care.html">Pet Care</a></li>
+                    <li><a class="nav-link" href="products.html">Products</a></li>
+                    <li><a class="nav-link" href="veterinarian.html">Find a Vet</a></li>
+                    <li><a class="nav-link" href="shelter.html">Adoption</a></li>
+                    <li><a class="nav-link" href="contact.html">Contact</a></li>
+
+                    <li class="d-flex align-items-center gap-2 mt-2 mt-lg-0 ms-lg-2">
+
+                        <button type="button" class="btn btn-outline-peach btn-sm btn-spotlight-search px-2" title="Spotlight Search (Ctrl + K)">
+                            <i class="bi bi-search"></i>
+                            <span class="d-none d-xl-inline small ms-1 text-muted">Ctrl+K</span>
+                        </button>
+
+                        <button type="button" class="theme-toggle-btn" title="Toggle Dark/Light Theme">
+                            <i class="bi bi-moon-stars-fill"></i>
+                        </button>
+
+                        <button type="button" class="btn btn-peach btn-sm btn-view-cart position-relative">
+                            <i class="bi bi-bag-heart-fill me-1"></i>
+                            My Care
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-badge-count" style="display: none;">0</span>
+                        </button>
+
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <span class="eyebrow">
+                <i class="bi bi-heart-pulse"></i>
+                PET HEALTH & WELLNESS
+            </span>
+
+            <h1>Everyday care made simple.</h1>
+
+            <p>
+                Precision nutrition calculator, weekly grooming tracker, anxiety calming audio, and emergency triage.
+            </p>
+        </div>
+    </section>
+
+    <section class="section-pad">
+        <div class="container">
+            <div class="row g-4">
+
+                <div class="col-lg-7">
+                    <div class="content-card p-4 p-md-5 h-100">
+
+                        <span class="eyebrow mb-1">NUTRITION CALCULATOR</span>
+
+                        <h2 class="h4 fw-bold text-brown mb-3">
+                            <i class="bi bi-egg-fried text-peach me-2"></i>
+                            Daily Energy & Feeding Portion Calculator
+                        </h2>
+
+                        <div class="row g-3">
+
+                            <div class="col-6">
+                                <label class="form-label small fw-bold text-muted">Species</label>
+                                <select id="dietSpecies" class="form-select form-select-sm">
+                                    <option value="dog" selected>Dog (Canine)</option>
+                                    <option value="cat">Cat (Feline)</option>
+                                </select>
+                            </div>
+
+                            <div class="col-6">
+                                <label class="form-label small fw-bold text-muted">Pet Weight (kg)</label>
+                                <input type="number" id="dietWeight" class="form-control form-control-sm" value="31" step="0.5" min="0.5">
+                            </div>
+
+                            <div class="col-6">
+                                <label class="form-label small fw-bold text-muted">Activity Level</label>
+                                <select id="dietActivity" class="form-select form-select-sm">
+                                    <option value="low">Low (Couch Potato)</option>
+                                    <option value="normal" selected>Normal / Moderate</option>
+                                    <option value="high">High (Sport / Agility)</option>
+                                </select>
+                            </div>
+
+                            <div class="col-6">
+                                <label class="form-label small fw-bold text-muted">Life Stage</label>
+                                <select id="dietStage" class="form-select form-select-sm">
+                                    <option value="puppy">Puppy / Kitten (&lt;1 yr)</option>
+                                    <option value="adult" selected>Adult (1 - 7 yrs)</option>
+                                    <option value="senior">Senior (7+ yrs)</option>
+                                </select>
+                            </div>
+
+                            <div class="col-12 mt-2">
+                                <button type="button" class="btn btn-peach btn-sm w-100" id="btnCalcDiet">
+                                    <i class="bi bi-calculator me-1"></i>
+                                    Calculate Daily Nutritional Target
+                                </button>
+                            </div>
+
+                            <div class="col-12" id="dietResultBox">
+                                <div class="p-3 bg-light rounded-3 text-center border">
+                                    <small class="text-muted">
+                                        Tap <strong>"Calculate Daily Nutritional Target"</strong>
+                                        to compute estimated kcal and feeding portions.
+                                    </small>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="content-card p-4 p-md-5 h-100">
+
+                        <span class="eyebrow mb-1">CARE ROUTINE</span>
+
+                        <h2 class="h4 fw-bold text-brown mb-2">
+                            <i class="bi bi-scissors text-peach me-2"></i>
+                            Weekly Grooming Checklist
+                        </h2>
+
+                        <div class="progress mb-3" style="height: 10px; border-radius: 10px;">
+                            <div class="progress-bar bg-peach" id="groomingProgressBar" style="width: 25%;"></div>
+                        </div>
+
+                        <small class="text-muted d-block mb-3" id="groomingProgressText">
+                            25% Routine Completed
+                        </small>
+
+                        <div class="form-check mb-2">
+                            <input class="form-check-input grooming-check" type="checkbox" id="groom1" checked>
+                            <label class="form-check-label small" for="groom1">
+                                Gentle Undercoat Slicker Brushing
+                            </label>
+                        </div>
+
+                        <div class="form-check mb-2">
+                            <input class="form-check-input grooming-check" type="checkbox" id="groom2">
+                            <label class="form-check-label small" for="groom2">
+                                Paw Pad & Quick-Safe Nail Trimming
+                            </label>
+                        </div>
+
+                        <div class="form-check mb-2">
+                            <input class="form-check-input grooming-check" type="checkbox" id="groom3">
+                            <label class="form-check-label small" for="groom3">
+                                Enzymatic Toothpaste Dental Brushing
+                            </label>
+                        </div>
+
+                        <div class="form-check mb-2">
+                            <input class="form-check-input grooming-check" type="checkbox" id="groom4">
+                            <label class="form-check-label small" for="groom4">
+                                Ear Canal Cleansing & Wax Inspection
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section-pad-sm bg-white">
+        <div class="container">
+            <div class="row g-4">
+
+                <div class="col-md-6">
+                    <div class="content-card p-4 h-100">
+
+                        <span class="eyebrow mb-1">ANXIETY RELIEF</span>
+
+                        <h2 class="h5 fw-bold text-brown mb-3">
+                            <i class="bi bi-music-note-beamed text-peach me-2"></i>
+                            Calming Sound Therapy
+                        </h2>
+
+                        <div class="d-flex align-items-center gap-3 p-3 bg-light rounded-3 mb-3 border">
+
+                            <button type="button" class="btn btn-peach btn-sm rounded-circle p-2" style="width: 42px; height: 42px;" id="btnSound1">
+                                <i class="bi bi-play-fill fs-5"></i>
+                            </button>
+
+                            <div>
+                                <strong class="d-block text-brown small">
+                                    Delta Wave Canine & Feline Relaxation
+                                </strong>
+
+                                <small class="text-muted">
+                                    432Hz Bio-Acoustic Frequency (Thunderstorm Relief)
+                                </small>
+                            </div>
+
+                        </div>
+
+                        <div class="d-flex align-items-center gap-3 p-3 bg-light rounded-3 border">
+
+                            <button type="button" class="btn btn-darkbrown btn-sm rounded-circle p-2" style="width: 42px; height: 42px;" id="btnSound2">
+                                <i class="bi bi-volume-up fs-5"></i>
+                            </button>
+
+                            <div>
+                                <strong class="d-block text-brown small">
+                                    Positive Clicker Training Simulation
+                                </strong>
+
+                                <small class="text-muted">
+                                    High-contrast training signal generator
+                                </small>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="content-card p-4 h-100">
+
+                        <span class="eyebrow mb-1">EMERGENCY GUIDE</span>
+
+                        <h2 class="h5 fw-bold text-brown mb-3">
+                            <i class="bi bi-bandaid text-danger me-2"></i>
+                            First-Aid Quick Action Triage
+                        </h2>
+
+                        <div class="accordion" id="triageAccordion">
+
+                            <div class="accordion-item mb-2">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed py-2 small fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#triage1">
+                                        Suspected Poison / Chocolate Ingestion
+                                    </button>
+                                </h3>
+
+                                <div id="triage1" class="accordion-collapse collapse" data-bs-parent="#triageAccordion">
+                                    <div class="accordion-body small text-muted">
+                                        Do NOT induce vomiting without veterinarian authorization. Contact a local emergency veterinarian or animal poison service immediately.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed py-2 small fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#triage2">
+                                        Acute Heatstroke / Hyperthermia
+                                    </button>
+                                </h3>
+
+                                <div id="triage2" class="accordion-collapse collapse" data-bs-parent="#triageAccordion">
+                                    <div class="accordion-body small text-muted">
+                                        Move the pet to shade immediately. Use cool, not ice-cold, water and seek emergency veterinary care.
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section-pad bg-white border-top border-bottom">
+        <div class="container">
+
+            <div class="text-center mb-5 reveal visible">
+
+                <span class="eyebrow">
+                    <i class="bi bi-heart-pulse-fill"></i>
+                    SMART CLINICAL TRIAGE
+                </span>
+
+                <h2>Interactive Pet Symptom Checker</h2>
+
+                <p class="lead mx-auto">
+                    Select your companion species and symptoms to evaluate clinical urgency.
+                </p>
+
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+
+                    <div class="content-card p-4 p-md-5 shadow-sm">
+
+                        <div class="mb-4">
+
+                            <label class="form-label small fw-bold text-brown text-uppercase tracking-wide mb-3">
+                                Step 1: Choose Species
+                            </label>
+
+                            <div class="row g-3" id="symptomSpeciesGroup">
+
+                                <div class="col-6 col-md-3">
+                                    <div class="quiz-step-card active" data-species="dog">
+                                        <span class="fs-2 d-block mb-1">Dog</span>
+                                        <strong class="small text-brown">Dog</strong>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 col-md-3">
+                                    <div class="quiz-step-card" data-species="cat">
+                                        <span class="fs-2 d-block mb-1">Cat</span>
+                                        <strong class="small text-brown">Cat</strong>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 col-md-3">
+                                    <div class="quiz-step-card" data-species="bird">
+                                        <span class="fs-2 d-block mb-1">Bird</span>
+                                        <strong class="small text-brown">Bird / Parrot</strong>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 col-md-3">
+                                    <div class="quiz-step-card" data-species="rabbit">
+                                        <span class="fs-2 d-block mb-1">Rabbit</span>
+                                        <strong class="small text-brown">Rabbit</strong>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+
+                            <label class="form-label small fw-bold text-brown text-uppercase tracking-wide mb-3">
+                                Step 2: Select Affected Area
+                            </label>
+
+                            <select class="form-select" id="symptomAreaSelect">
+                                <option value="digestive" selected>Stomach, Vomiting & Digestion</option>
+                                <option value="respiratory">Breathing, Coughing & Sneezing</option>
+                                <option value="skin">Skin, Paws & Itching</option>
+                                <option value="eyes_ears">Eyes & Ears Discharge</option>
+                                <option value="urinary">Urination & Litter Box Straining</option>
+                            </select>
+
+                        </div>
+
+                        <div class="mb-4">
+
+                            <label class="form-label small fw-bold text-brown text-uppercase tracking-wide mb-2">
+                                Step 3: Check Specific Signs
+                            </label>
+
+                            <div class="p-3 bg-light rounded-3 border" id="symptomsCheckboxContainer"></div>
+
+                        </div>
+
+                        <button type="button" class="btn btn-peach w-100 py-2 shadow-sm" id="btnEvaluateSymptoms">
+                            <i class="bi bi-activity me-1"></i>
+                            Analyze Symptoms & Get Triage Score
+                        </button>
+
+                        <div class="mt-4" id="symptomResultBox" style="display: none;"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-pad">
+        <div class="container">
+
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-5 reveal visible">
+
+                    <span class="eyebrow">
+                        <i class="bi bi-calendar2-check-fill"></i>
+                        PREVENTATIVE IMMUNOLOGY
+                    </span>
+
+                    <h2>Vaccine & Deworming Scheduler</h2>
+
+                    <p class="lead">
+                        Enter your pet's last vaccine or birth date to calculate estimated future reminders.
+                    </p>
+
+                    <div class="p-3 bg-white rounded-4 border shadow-sm mt-4">
+
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold text-brown">
+                                Pet Species
+                            </label>
+
+                            <select class="form-select form-select-sm" id="vacPetSpecies">
+                                <option value="dog" selected>Canine (Dog / Puppy)</option>
+                                <option value="cat">Feline (Cat / Kitten)</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold text-brown">
+                                Last Vaccine or Birth Date
+                            </label>
+
+                            <input type="date" class="form-control form-control-sm" id="vacLastDate" value="2026-03-01">
+                        </div>
+
+                        <button type="button" class="btn btn-peach btn-sm w-100" id="btnCalcVaccines">
+                            <i class="bi bi-calculator me-1"></i>
+                            Compute Schedule
+                        </button>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-7 reveal visible">
+
+                    <div class="content-card p-4 shadow-sm" id="vaccineScheduleOutput">
+
+                        <h5 class="fw-bold text-brown mb-3">
+                            <i class="bi bi-shield-shaded text-peach me-2"></i>
+                            Predicted Immunization Timeline
+                        </h5>
+
+                        <div class="table-responsive">
+
+                            <table class="table table-sm table-bordered small bg-white mb-3">
+
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Immunity Milestone</th>
+                                        <th>Due Target</th>
+                                        <th>Action Required</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody id="vacTimelineRows">
+
+                                    <tr>
+                                        <td><strong>Core Booster</strong></td>
+                                        <td class="fw-bold text-peach">Within 12 Months</td>
+                                        <td>Follow veterinarian schedule</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><strong>Rabies Vaccine</strong></td>
+                                        <td class="fw-bold text-brown">Annual / As advised</td>
+                                        <td>Follow local veterinary guidance</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><strong>Broad-Spectrum Deworming</strong></td>
+                                        <td class="fw-bold text-success">Every 3 Months</td>
+                                        <td>Parasite prevention</td>
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+                        </div>
+
+                        <button type="button" class="btn btn-outline-peach btn-sm w-100" id="btnDownloadIcs">
+                            <i class="bi bi-calendar-plus me-1"></i>
+                            Download Calendar Event (.ICS)
+                        </button>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section-pad bg-white border-top border-bottom">
+        <div class="container">
+
+            <div class="text-center mb-5 reveal visible">
+
+                <span class="eyebrow">
+                    <i class="bi bi-exclamation-octagon-fill text-danger"></i>
+                    POISON SAFETY MATRIX
+                </span>
+
+                <h2>Toxic Foods, Plants & Chemical Scanner</h2>
+
+                <p class="lead mx-auto">
+                    Search common foods, plants and medications with safety information.
+                </p>
+
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-11">
+
+                    <div class="row g-3 align-items-center mb-4">
+
+                        <div class="col-md-6">
+
+                            <div class="input-group">
+                                <span class="input-group-text bg-white border-end-0">
+                                    <i class="bi bi-search text-peach"></i>
+                                </span>
+
+                                <input type="text" id="toxicSearchInput" class="form-control border-start-0" placeholder="Search item...">
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6 text-md-end">
+
+                            <div class="btn-group btn-group-sm" role="group">
+
+                                <button type="button" class="btn btn-outline-peach active btn-toxic-filter" data-filter="all">
+                                    All
+                                </button>
+
+                                <button type="button" class="btn btn-outline-peach btn-toxic-filter" data-filter="food">
+                                    Foods
+                                </button>
+
+                                <button type="button" class="btn btn-outline-peach btn-toxic-filter" data-filter="plant">
+                                    Plants
+                                </button>
+
+                                <button type="button" class="btn btn-outline-peach btn-toxic-filter" data-filter="med">
+                                    Human Meds
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="toxicTableContainer" class="table-responsive bg-white rounded-4 border shadow-sm">
+
+                        <table class="table table-hover align-middle small mb-0">
+
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Substance</th>
+                                    <th>Category</th>
+                                    <th>Safety Status</th>
+                                    <th>Toxic Agent / Risk</th>
+                                    <th>Emergency Guidance</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="toxicTableRows"></tbody>
+
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-pad">
+        <div class="container">
+
+            <div class="text-center mb-4">
+
+                <span class="eyebrow">
+                    <i class="bi bi-journal-medical"></i>
+                    CLINICAL WISDOM
+                </span>
+
+                <h2>Veterinary Health Essentials</h2>
+
+            </div>
+
+            <div id="healthTips" class="row g-4"></div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+
+            <div class="row g-4">
+
+                <div class="col-lg-4">
+
+                    <a class="footer-brand" href="../dashboard.html">
+                        <i class="bi bi-heart-fill"></i> FurEver Care
+                    </a>
+
+                    <p>
+                        They Deserve Forever Love. A complete caring pet ecosystem.
+                    </p>
+
+                </div>
+
+                <div class="col-6 col-lg-2">
+
+                    <h5>Explore</h5>
+
+                    <a href="pet-care.html">Pet Care</a>
+                    <a href="products.html">Products</a>
+                    <a href="veterinarian.html">Find a Vet</a>
+
+                </div>
+
+                <div class="col-6 col-lg-2">
+
+                    <h5>Community</h5>
+
+                    <a href="shelter.html">Adoption</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <h5>Emergency</h5>
+
+                    <a class="btn btn-peach" href="emergency.html">
+                        Emergency Help
+                    </a>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <small>© 2026 All right reserved</small>
+
+        </div>
+    </footer>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+
+    <button id="topBtn" class="top-btn" type="button">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+    <script src="../js/utils.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/clock.js"></script>
+    <script src="../js/geolocation.js"></script>
+    <script src="../js/navigation.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            function showToast(message, title, type, icon) {
+                if (
+                    typeof App !== 'undefined' &&
+                    typeof App.toast === 'function'
+                ) {
+                    App.toast(message, title, type, icon);
+                }
+            }
+
+            const calcBtn = document.getElementById('btnCalcDiet');
+
+            if (calcBtn) {
+                calcBtn.addEventListener('click', function() {
+
+                    const weightElement = document.getElementById('dietWeight');
+                    const speciesElement = document.getElementById('dietSpecies');
+                    const activityElement = document.getElementById('dietActivity');
+                    const stageElement = document.getElementById('dietStage');
+
+                    let weight = weightElement ? parseFloat(weightElement.value) || 10 : 10;
+                    let species = speciesElement ? speciesElement.value || 'dog' : 'dog';
+                    let activity = activityElement ? activityElement.value || 'normal' : 'normal';
+                    let stage = stageElement ? stageElement.value || 'adult' : 'adult';
+
+                    const rer = Math.round(70 * Math.pow(weight, 0.75));
+
+                    let multiplier = 1.6;
+
+                    if (species === 'dog') {
+                        if (stage === 'puppy') {
+                            multiplier = 2.5;
+                        } else if (stage === 'senior') {
+                            multiplier = 1.2;
+                        } else {
+                            if (activity === 'low') {
+                                multiplier = 1.2;
+                            } else if (activity === 'high') {
+                                multiplier = 2.0;
+                            } else {
+                                multiplier = 1.6;
+                            }
+                        }
+                    } else {
+                        if (stage === 'puppy') {
+                            multiplier = 2.2;
+                        } else if (stage === 'senior') {
+                            multiplier = 1.1;
+                        } else {
+                            if (activity === 'low') {
+                                multiplier = 1.0;
+                            } else if (activity === 'high') {
+                                multiplier = 1.5;
+                            } else {
+                                multiplier = 1.2;
+                            }
+                        }
+                    }
+
+                    const dailyKcal = Math.round(rer * multiplier);
+                    const kibbleGrams = Math.round((dailyKcal / 375) * 100);
+                    const waterMl = Math.round(weight * (species === 'dog' ? 60 : 50));
+
+                    const resultBox = document.getElementById('dietResultBox');
+
+                    if (resultBox) {
+                        resultBox.innerHTML = `
+                            <div class="p-3 bg-light rounded-3 border border-success mt-2">
+                                <h4 class="h6 fw-bold text-brown mb-2">
+                                    <i class="bi bi-check-circle-fill text-success me-1"></i>
+                                    Custom Daily Nutritional Target
+                                </h4>
+
+                                <div class="row g-2 text-center">
+
+                                    <div class="col-4">
+                                        <div class="p-2 bg-white rounded-3 shadow-sm">
+                                            <small class="text-muted d-block">Daily Energy</small>
+                                            <strong class="text-peach h5 mb-0">${dailyKcal}</strong>
+                                            <small class="text-muted">kcal</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-4">
+                                        <div class="p-2 bg-white rounded-3 shadow-sm">
+                                            <small class="text-muted d-block">Dry Kibble</small>
+                                            <strong class="text-brown h5 mb-0">${kibbleGrams}</strong>
+                                            <small class="text-muted">g/day</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-4">
+                                        <div class="p-2 bg-white rounded-3 shadow-sm">
+                                            <small class="text-muted d-block">Hydration</small>
+                                            <strong class="text-brown h5 mb-0">${waterMl}</strong>
+                                            <small class="text-muted">mL</small>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <small class="text-muted d-block mt-2">
+                                    This is an estimated educational calculation. Consult your veterinarian for an individualized diet.
+                                </small>
+                            </div>
+                        `;
+                    }
+
+                    showToast(
+                        'Calculated ' + dailyKcal + ' kcal/day for your ' + species + '!',
+                        'Nutrition Target Ready',
+                        'success'
+                    );
+                });
+            }
+
+            const groomingChecks = document.querySelectorAll('.grooming-check');
+            const groomingBar = document.getElementById('groomingProgressBar');
+            const groomingText = document.getElementById('groomingProgressText');
+
+            function updateGrooming() {
+
+                let completed = 0;
+
+                groomingChecks.forEach(function(check) {
+                    if (check.checked) completed++;
+                });
+
+                let percentage = 0;
+
+                if (groomingChecks.length > 0) {
+                    percentage = Math.round((completed / groomingChecks.length) * 100);
+                }
+
+                if (groomingBar) {
+                    groomingBar.style.width = percentage + '%';
+                }
+
+                if (groomingText) {
+                    groomingText.textContent = percentage + '% Routine Completed';
+                }
+            }
+
+            groomingChecks.forEach(function(check) {
+                check.addEventListener('change', updateGrooming);
+            });
+
+            updateGrooming();
+
+            const soundButton1 = document.getElementById('btnSound1');
+            const soundButton2 = document.getElementById('btnSound2');
+
+            if (soundButton1) {
+                soundButton1.addEventListener('click', function() {
+                    showToast(
+                        'Playing calming sound simulation for anxious pets...',
+                        'Sound Therapy Active',
+                        'info',
+                        'bi-music-note-beamed'
+                    );
+                });
+            }
+
+            if (soundButton2) {
+                soundButton2.addEventListener('click', function() {
+                    showToast(
+                        'Playing positive reinforcement clicker simulation...',
+                        'Clicker Training',
+                        'success',
+                        'bi-bell-fill'
+                    );
+                });
+            }
+
+            async function loadHealthTips() {
+
+                try {
+
+                    if (
+                        typeof App === 'undefined' ||
+                        typeof App.fetchJSON !== 'function'
+                    ) {
+                        return;
+                    }
+
+                    const tips = await App.fetchJSON(
+                        '../data/health-tips.json',
+                        'healthTips'
+                    );
+
+                    const container = document.getElementById('healthTips');
+
+                    if (!container) return;
+
+                    container.innerHTML = tips.map(function(tip) {
+
+                        let icon = tip.icon || 'bi-heart-pulse';
+                        let title = tip.title || 'Pet Health Tip';
+                        let text = tip.text || '';
+
+                        if (typeof App.escape === 'function') {
+                            title = App.escape(title);
+                            text = App.escape(text);
+                        }
+
+                        return `
+                            <div class="col-md-4 reveal visible">
+                                <article class="content-card p-4">
+
+                                    <div class="role-icon mx-0 mb-3">
+                                        <i class="bi ${icon}"></i>
+                                    </div>
+
+                                    <h3 class="h5 text-brown fw-bold mb-2">
+                                        ${title}
+                                    </h3>
+
+                                    <p class="small text-muted mb-0">
+                                        ${text}
+                                    </p>
+
+                                </article>
+                            </div>
+                        `;
+
+                    }).join('');
+
+                } catch (error) {
+                    console.error('Error loading health tips:', error);
+                }
+            }
+
+            loadHealthTips();
+
+            let currentSpecies = 'dog';
+
+            const symptomDatabase = {
+
+                digestive: [
+                    {
+                        label: 'Vomiting once or twice (yellow bile)',
+                        severity: 'yellow',
+                        text: 'Mild digestive upset may be possible. Monitor closely and contact your veterinarian if it continues.'
+                    },
+                    {
+                        label: 'Bloody vomiting or bloody diarrhea',
+                        severity: 'red',
+                        text: 'HIGH URGENCY: Blood in vomit or stool can indicate a serious condition. Seek immediate veterinary care.'
+                    },
+                    {
+                        label: 'Swollen hard belly + repeated unproductive retching',
+                        severity: 'red',
+                        text: 'CRITICAL EMERGENCY: Possible bloat. Seek emergency veterinary care immediately.'
+                    },
+                    {
+                        label: 'Refusing food for more than 24 hours with lethargy',
+                        severity: 'yellow',
+                        text: 'Loss of appetite with lethargy can be significant. Contact a veterinarian.'
+                    }
+                ],
+
+                respiratory: [
+                    {
+                        label: 'Loud dry hacking cough',
+                        severity: 'yellow',
+                        text: 'Possible respiratory infection or irritation. Veterinary assessment is recommended.'
+                    },
+                    {
+                        label: 'Labored breathing or blueish gums',
+                        severity: 'red',
+                        text: 'CRITICAL EMERGENCY: Breathing difficulty requires immediate veterinary attention.'
+                    },
+                    {
+                        label: 'Occasional sneezing with watery eye discharge',
+                        severity: 'green',
+                        text: 'May be mild irritation or an upper respiratory issue. Monitor closely.'
+                    }
+                ],
+
+                skin: [
+                    {
+                        label: 'Constant paw licking and red itchy belly',
+                        severity: 'green',
+                        text: 'Possible skin irritation, allergy or dermatitis. Consult a veterinarian if persistent.'
+                    },
+                    {
+                        label: 'Circular hair loss with crusty ring',
+                        severity: 'yellow',
+                        text: 'Possible fungal infection. Veterinary examination is recommended.'
+                    },
+                    {
+                        label: 'Severe flea/tick infestation with pale gums',
+                        severity: 'yellow',
+                        text: 'Heavy parasite infestation can contribute to anemia. Veterinary assessment is recommended.'
+                    }
+                ],
+
+                eyes_ears: [
+                    {
+                        label: 'Head shaking with ear discharge',
+                        severity: 'yellow',
+                        text: 'Possible ear infection. Veterinary examination is recommended.'
+                    },
+                    {
+                        label: 'Squinting, cloudy eye or eye kept shut',
+                        severity: 'red',
+                        text: 'Possible eye emergency. Seek veterinary examination as soon as possible.'
+                    }
+                ],
+
+                urinary: [
+                    {
+                        label: 'Male cat straining in litter box and passing only drops',
+                        severity: 'red',
+                        text: 'CRITICAL EMERGENCY: Possible urinary blockage. Immediate veterinary treatment is required.'
+                    },
+                    {
+                        label: 'Frequent urination with blood in urine',
+                        severity: 'yellow',
+                        text: 'Possible urinary infection or bladder issue. Veterinary examination is recommended.'
+                    }
+                ]
+
+            };
+
+            const symptomSpeciesGroup = document.getElementById('symptomSpeciesGroup');
+            const symptomAreaSelect = document.getElementById('symptomAreaSelect');
+            const symptomCheckboxContainer = document.getElementById('symptomsCheckboxContainer');
+
+            function escapeValue(value) {
+
+                if (
+                    typeof App !== 'undefined' &&
+                    typeof App.escape === 'function'
+                ) {
+                    return App.escape(String(value));
+                }
+
+                const temp = document.createElement('div');
+                temp.textContent = String(value);
+                return temp.innerHTML;
+            }
+
+            function renderSymptomCheckboxes() {
+
+                let area = 'digestive';
+
+                if (symptomAreaSelect) {
+                    area = symptomAreaSelect.value || 'digestive';
+                }
+
+                const list = symptomDatabase[area] || [];
+
+                if (!symptomCheckboxContainer) return;
+
+                symptomCheckboxContainer.innerHTML = list.map(function(item, index) {
+
+                    return `
+                        <div class="form-check mb-2">
+
+                            <input
+                                class="form-check-input symptom-item-check"
+                                type="checkbox"
+                                id="symCheck_${index}"
+                                data-severity="${escapeValue(item.severity)}"
+                                data-description="${escapeValue(item.text)}"
+                                data-label="${escapeValue(item.label)}"
+                            >
+
+                            <label class="form-check-label small" for="symCheck_${index}">
+                                ${escapeValue(item.label)}
+                            </label>
+
+                        </div>
+                    `;
+
+                }).join('');
+            }
+
+            if (symptomSpeciesGroup) {
+
+                const speciesCards = symptomSpeciesGroup.querySelectorAll('.quiz-step-card');
+
+                speciesCards.forEach(function(card) {
+
+                    card.addEventListener('click', function() {
+
+                        speciesCards.forEach(function(item) {
+                            item.classList.remove('active');
+                        });
+
+                        card.classList.add('active');
+
+                        currentSpecies =
+                            card.getAttribute('data-species') || 'dog';
+
+                        renderSymptomCheckboxes();
+                    });
+
+                });
+            }
+
+            if (symptomAreaSelect) {
+                symptomAreaSelect.addEventListener('change', renderSymptomCheckboxes);
+            }
+
+            renderSymptomCheckboxes();
+
+            const evaluateButton = document.getElementById('btnEvaluateSymptoms');
+
+            if (evaluateButton) {
+
+                evaluateButton.addEventListener('click', function() {
+
+                    const checked = document.querySelectorAll('.symptom-item-check:checked');
+                    const resultBox = document.getElementById('symptomResultBox');
+
+                    if (!resultBox) return;
+
+                    if (checked.length === 0) {
+                        showToast(
+                            'Please check at least one symptom.',
+                            'Select Symptom',
+                            'warning'
+                        );
+                        return;
+                    }
+
+                    let maximumSeverity = 'green';
+                    const adviceList = [];
+
+                    checked.forEach(function(checkbox) {
+
+                        const severity = checkbox.getAttribute('data-severity');
+
+                        if (severity === 'red') {
+                            maximumSeverity = 'red';
+                        } else if (
+                            severity === 'yellow' &&
+                            maximumSeverity !== 'red'
+                        ) {
+                            maximumSeverity = 'yellow';
+                        }
+
+                        adviceList.push({
+                            label: checkbox.getAttribute('data-label') || '',
+                            text: checkbox.getAttribute('data-description') || '',
+                            severity: severity
+                        });
+                    });
+
+                    let badgeHTML =
+                        '<span class="badge bg-success">Mild / Low Urgency</span>';
+
+                    let alertClass =
+                        'border-success bg-success bg-opacity-10';
+
+                    if (maximumSeverity === 'red') {
+
+                        badgeHTML =
+                            '<span class="badge bg-danger">CRITICAL EMERGENCY</span>';
+
+                        alertClass =
+                            'border-danger bg-danger bg-opacity-10';
+
+                        showToast(
+                            'Critical signs detected. Seek emergency veterinary assistance.',
+                            'Critical Emergency',
+                            'danger',
+                            'bi-exclamation-octagon-fill'
+                        );
+
+                    } else if (maximumSeverity === 'yellow') {
+
+                        badgeHTML =
+                            '<span class="badge bg-warning text-dark">Moderate Severity</span>';
+
+                        alertClass =
+                            'border-warning bg-warning bg-opacity-10';
+                    }
+
+                    let adviceHTML = '';
+
+                    adviceList.forEach(function(advice) {
+
+                        adviceHTML += `
+                            <div class="mb-2 p-2 bg-white rounded-3 border">
+                                <strong>• ${advice.label}</strong>
+                                <br>
+                                <span class="text-muted">${advice.text}</span>
+                            </div>
+                        `;
+                    });
+
+                    resultBox.style.display = 'block';
+
+                    resultBox.innerHTML = `
+                        <div class="p-4 rounded-4 border ${alertClass}">
+
+                            <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+
+                                <h5 class="fw-bold text-brown mb-0">
+                                    Triage Report (${currentSpecies.toUpperCase()})
+                                </h5>
+
+                                ${badgeHTML}
+
+                            </div>
+
+                            <div class="small">
+
+                                <strong class="d-block text-brown mb-2">
+                                    Recommended Actions:
+                                </strong>
+
+                                ${adviceHTML}
+
+                            </div>
+
+                            <div class="mt-3 pt-2 border-top d-flex flex-wrap justify-content-between align-items-center gap-2">
+
+                                <small class="text-muted">
+                                    Need professional veterinary advice?
+                                </small>
+
+                                <a href="veterinarian.html" class="btn btn-peach btn-sm px-3">
+                                    <i class="bi bi-calendar-check me-1"></i>
+                                    Find a Vet
+                                </a>
+
+                            </div>
+
+                        </div>
+                    `;
+
+                    resultBox.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'nearest'
+                    });
+
+                });
+            }
+
+            const vaccineButton = document.getElementById('btnCalcVaccines');
+
+            function computeVaccines() {
+
+                const speciesElement = document.getElementById('vacPetSpecies');
+                const dateElement = document.getElementById('vacLastDate');
+
+                let species = speciesElement ? speciesElement.value || 'dog' : 'dog';
+                let dateValue = dateElement ? dateElement.value || '2026-03-01' : '2026-03-01';
+
+                const baseDate = new Date(dateValue);
+
+                if (isNaN(baseDate.getTime())) {
+
+                    showToast(
+                        'Please select a valid date.',
+                        'Invalid Date',
+                        'warning'
+                    );
+
+                    return;
+                }
+
+                const boosterDate = new Date(baseDate);
+                boosterDate.setMonth(boosterDate.getMonth() + 12);
+
+                const dewormDate = new Date(baseDate);
+                dewormDate.setMonth(dewormDate.getMonth() + 3);
+
+                const rabiesDate = new Date(baseDate);
+                rabiesDate.setMonth(rabiesDate.getMonth() + 12);
+
+                function formatDate(date) {
+                    return date.toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric'
+                    });
+                }
+
+                const rows = document.getElementById('vacTimelineRows');
+
+                if (rows) {
+
+                    const coreName =
+                        species === 'dog' ?
+                        'DHPP Core Booster' :
+                        'FVRCP Core Booster';
+
+                    rows.innerHTML = `
+                        <tr>
+                            <td><strong>${coreName}</strong></td>
+                            <td class="fw-bold text-peach">${formatDate(boosterDate)}</td>
+                            <td>Follow veterinarian schedule</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Rabies Vaccine</strong></td>
+                            <td class="fw-bold text-brown">${formatDate(rabiesDate)}</td>
+                            <td>Follow local veterinary guidance</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Deworming Reminder</strong></td>
+                            <td class="fw-bold text-success">${formatDate(dewormDate)}</td>
+                            <td>Parasite prevention</td>
+                        </tr>
+                    `;
+                }
+
+                showToast(
+                    'Generated immunization schedule for ' + species.toUpperCase() + '!',
+                    'Timeline Calculated',
+                    'success'
+                );
+            }
+
+            if (vaccineButton) {
+                vaccineButton.addEventListener('click', computeVaccines);
+            }
+
+            const downloadIcsButton = document.getElementById('btnDownloadIcs');
+
+            if (downloadIcsButton) {
+
+                downloadIcsButton.addEventListener('click', function() {
+
+                    const speciesElement = document.getElementById('vacPetSpecies');
+
+                    let species = speciesElement ?
+                        speciesElement.value || 'dog' :
+                        'dog';
+
+                    const eventStart = new Date(Date.now() + 86400000 * 30);
+
+                    const eventEnd = new Date(eventStart.getTime() + 3600000);
+
+                    function formatICSDate(date) {
+                        return date
+                            .toISOString()
+                            .replace(/[-:]/g, '')
+                            .split('.')[0] + 'Z';
+                    }
+
+                    const vaccineName =
+                        species === 'dog' ?
+                        'Dog DHPP' :
+                        'Cat FVRCP';
+
+                    const icsContent = [
+                        'BEGIN:VCALENDAR',
+                        'VERSION:2.0',
+                        'PRODID:-//FurEver Care//Pet Health Reminder//EN',
+                        'BEGIN:VEVENT',
+                        'SUMMARY:FurEver Care - ' + vaccineName + ' Vaccine Reminder',
+                        'DESCRIPTION:Pet vaccination reminder. Please confirm the exact schedule with your veterinarian.',
+                        'DTSTART:' + formatICSDate(eventStart),
+                        'DTEND:' + formatICSDate(eventEnd),
+                        'STATUS:CONFIRMED',
+                        'END:VEVENT',
+                        'END:VCALENDAR'
+                    ].join('\r\n');
+
+                    const blob = new Blob(
+                        [icsContent],
+                        { type: 'text/calendar;charset=utf-8' }
+                    );
+
+                    const url = URL.createObjectURL(blob);
+
+                    const link = document.createElement('a');
+
+                    link.href = url;
+                    link.download = 'Pet_Vaccine_Reminder.ics';
+
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+
+                    URL.revokeObjectURL(url);
+
+                    showToast(
+                        'Calendar event downloaded successfully.',
+                        'Calendar Ready',
+                        'success',
+                        'bi-calendar-event'
+                    );
+
+                });
+            }
+
+            const toxicDatabase = [
+
+                {
+                    name: 'Dark Chocolate / Cocoa',
+                    category: 'food',
+                    safe: false,
+                    agent: 'Theobromine & Caffeine',
+                    advice: 'Potentially toxic. Contact a veterinarian or poison service immediately after ingestion.'
+                },
+
+                {
+                    name: 'Xylitol / Sugar-free Gum',
+                    category: 'food',
+                    safe: false,
+                    agent: 'Xylitol',
+                    advice: 'Can cause dangerous low blood sugar and liver injury. Immediate veterinary attention is required.'
+                },
+
+                {
+                    name: 'Grapes & Raisins',
+                    category: 'food',
+                    safe: false,
+                    agent: 'Tartaric acid / unknown mechanism',
+                    advice: 'Can cause acute kidney injury, particularly in dogs. Contact a veterinarian immediately.'
+                },
+
+                {
+                    name: 'Onions & Garlic',
+                    category: 'food',
+                    safe: false,
+                    agent: 'Organosulfur compounds',
+                    advice: 'Can damage red blood cells and cause anemia.'
+                },
+
+                {
+                    name: 'Easter Lily / Tiger Lily',
+                    category: 'plant',
+                    safe: false,
+                    agent: 'Lily toxins',
+                    advice: 'Extremely dangerous to cats and may cause severe kidney injury.'
+                },
+
+                {
+                    name: 'Aloe Vera',
+                    category: 'plant',
+                    safe: false,
+                    agent: 'Plant compounds',
+                    advice: 'May cause vomiting, diarrhea and gastrointestinal irritation.'
+                },
+
+                {
+                    name: 'Sago Palm',
+                    category: 'plant',
+                    safe: false,
+                    agent: 'Cycasin',
+                    advice: 'Highly toxic plant. Can cause severe liver injury.'
+                },
+
+                {
+                    name: 'Paracetamol / Panadol / Tylenol',
+                    category: 'med',
+                    safe: false,
+                    agent: 'Acetaminophen',
+                    advice: 'Extremely dangerous to pets, especially cats. Seek veterinary help immediately.'
+                },
+
+                {
+                    name: 'Ibuprofen / Advil / Brufen',
+                    category: 'med',
+                    safe: false,
+                    agent: 'NSAID',
+                    advice: 'Can cause gastrointestinal ulcers and kidney injury.'
+                },
+
+                {
+                    name: 'Plain Boiled Chicken Breast',
+                    category: 'food',
+                    safe: true,
+                    agent: 'Lean Protein',
+                    advice: 'Generally suitable as an occasional plain treat when cooked and free of bones and seasoning.'
+                },
+
+                {
+                    name: 'Cooked Pumpkin Puree',
+                    category: 'food',
+                    safe: true,
+                    agent: 'Soluble Fiber',
+                    advice: 'Can be offered in small portions as part of a balanced diet.'
+                },
+
+                {
+                    name: 'Seedless Watermelon & Apples',
+                    category: 'food',
+                    safe: true,
+                    agent: 'Vitamins & Hydration',
+                    advice: 'Can be offered in small portions. Remove seeds and cores.'
+                },
+
+                {
+                    name: 'Spider Plant & Boston Fern',
+                    category: 'plant',
+                    safe: true,
+                    agent: 'Non-toxic household plants',
+                    advice: 'Generally considered pet-friendly.'
+                }
+
+            ];
+
+            const toxicTableBody = document.getElementById('toxicTableRows');
+            const toxicSearch = document.getElementById('toxicSearchInput');
+
+            function renderToxicTable(filterCategory, query) {
+
+                if (!toxicTableBody) return;
+
+                if (!filterCategory) filterCategory = 'all';
+                if (!query) query = '';
+
+                const searchQuery = query.toLowerCase().trim();
+
+                const filtered = toxicDatabase.filter(function(item) {
+
+                    const categoryMatch =
+                        filterCategory === 'all' ||
+                        item.category === filterCategory;
+
+                    const queryMatch =
+                        !searchQuery ||
+                        item.name.toLowerCase().includes(searchQuery) ||
+                        item.agent.toLowerCase().includes(searchQuery) ||
+                        item.advice.toLowerCase().includes(searchQuery);
+
+                    return categoryMatch && queryMatch;
+                });
+
+                if (filtered.length === 0) {
+
+                    toxicTableBody.innerHTML = `
+                        <tr>
+                            <td colspan="5" class="text-center py-4 text-muted">
+                                No matching substances found for "${escapeValue(query)}".
+                            </td>
+                        </tr>
+                    `;
+
+                    return;
+                }
+
+                toxicTableBody.innerHTML = filtered.map(function(item) {
+
+                    let categoryText = 'Medicine';
+
+                    if (item.category === 'food') {
+                        categoryText = 'Food';
+                    } else if (item.category === 'plant') {
+                        categoryText = 'Plant';
+                    }
+
+                    let safetyHTML = '';
+
+                    if (item.safe) {
+
+                        safetyHTML = `
+                            <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 px-2 py-1">
+                                <i class="bi bi-check-circle-fill me-1"></i>
+                                SAFE
+                            </span>
+                        `;
+
+                    } else {
+
+                        safetyHTML = `
+                            <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1">
+                                <i class="bi bi-x-octagon-fill me-1"></i>
+                                TOXIC / POISONOUS
+                            </span>
+                        `;
+                    }
+
+                    return `
+                        <tr>
+
+                            <td>
+                                <strong class="text-brown">
+                                    ${escapeValue(item.name)}
+                                </strong>
+                            </td>
+
+                            <td>
+                                <span class="badge badge-soft">
+                                    ${categoryText}
+                                </span>
+                            </td>
+
+                            <td>${safetyHTML}</td>
+
+                            <td>
+                                <code>${escapeValue(item.agent)}</code>
+                            </td>
+
+                            <td class="text-muted" style="max-width: 320px;">
+                                ${escapeValue(item.advice)}
+                            </td>
+
+                        </tr>
+                    `;
+
+                }).join('');
+            }
+
+            const toxicFilterButtons = document.querySelectorAll('.btn-toxic-filter');
+
+            toxicFilterButtons.forEach(function(button) {
+
+                button.addEventListener('click', function() {
+
+                    toxicFilterButtons.forEach(function(item) {
+                        item.classList.remove('active');
+                    });
+
+                    button.classList.add('active');
+
+                    let query = '';
+
+                    if (toxicSearch) {
+                        query = toxicSearch.value;
+                    }
+
+                    renderToxicTable(
+                        button.getAttribute('data-filter'),
+                        query
+                    );
+                });
+            });
+
+            if (toxicSearch) {
+
+                toxicSearch.addEventListener('input', function(event) {
+
+                    const activeButton =
+                        document.querySelector('.btn-toxic-filter.active');
+
+                    let activeFilter = 'all';
+
+                    if (activeButton) {
+                        activeFilter =
+                            activeButton.getAttribute('data-filter') || 'all';
+                    }
+
+                    renderToxicTable(
+                        activeFilter,
+                        event.target.value
+                    );
+                });
+            }
+
+            renderToxicTable('all', '');
+
+        });
+    </script>
+
+    <script src="../js/effects.js"></script>
+    <script src="../js/chatbot.js"></script>
+
+</body>
+
+</html>

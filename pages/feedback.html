@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Share Your Feedback & Experience | FurEver Care</title>
+    <link rel="icon" href="images/logo.jfif">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+</head>
+
+<body>
+
+
+
+
+    <div class="ticker">
+        <div class="container d-flex justify-content-between gap-3">
+            <span id="locationText">📍 Detecting location...</span>
+            <span id="clock">--:--:--</span>
+            <span>🐾 Verified Community Reviews & Experience</span>
+        </div>
+    </div>
+
+
+    <nav class="navbar navbar-expand-lg sticky-top fc-nav">
+        <div class="container">
+            <a class="navbar-brand fw-800" href="../index.html">
+                <i class="bi bi-heart-fill"></i> FurEver <span>Care</span>
+            </a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+        <i class="bi bi-list"></i>
+      </button>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                    <li><a class="nav-link" href="../index.html">Home</a></li>
+                    <li><a class="nav-link" href="pet-owner.html">Pet Passport</a></li>
+                    <li><a class="nav-link" href="pet-care.html">Pet Care</a></li>
+                    <li><a class="nav-link" href="products.html">Products</a></li>
+                    <li><a class="nav-link" href="veterinarian.html">Find a Vet</a></li>
+                    <li><a class="nav-link" href="shelter.html">Adoption</a></li>
+                    <li><a class="nav-link" href="about.html">About Us</a></li>
+                    <li><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li>
+                        <button class="btn btn-peach btn-sm btn-view-cart position-relative ms-lg-2">
+              <i class="bi bi-bag-heart-fill me-1"></i> My Care
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-badge-count" style="display: none;">0</span>
+            </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <section class="page-hero">
+        <div class="container">
+            <span class="eyebrow"><i class="bi bi-star-fill text-warning"></i> COMMUNITY REVIEWS</span>
+            <h1>Share your platform experience.</h1>
+            <p>Your verified feedback directly shapes our animal sanctuary programs and clinical features.</p>
+        </div>
+    </section>
+
+
+    <section class="section-pad">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="content-card p-4 p-md-5">
+                        <h2 class="h4 fw-bold text-brown mb-2">
+                            <i class="bi bi-chat-heart text-peach me-2"></i> Submit Verified Review
+                        </h2>
+                        <p class="small text-muted mb-4">Rate our pet passport, veterinary scheduler, and adoption hub.</p>
+
+                        <form id="feedbackForm" novalidate>
+
+                            <div class="mb-3 p-3 bg-light rounded-3 text-center border">
+                                <label class="form-label small fw-bold text-muted d-block mb-1">Rate Your Experience</label>
+                                <div class="d-flex justify-content-center gap-2 fs-3 text-warning" id="starRatingBox">
+                                    <i class="bi bi-star-fill star-btn cursor-pointer" data-val="1"></i>
+                                    <i class="bi bi-star-fill star-btn cursor-pointer" data-val="2"></i>
+                                    <i class="bi bi-star-fill star-btn cursor-pointer" data-val="3"></i>
+                                    <i class="bi bi-star-fill star-btn cursor-pointer" data-val="4"></i>
+                                    <i class="bi bi-star-fill star-btn cursor-pointer" data-val="5"></i>
+                                </div>
+                                <input type="hidden" id="starRatingValue" value="5">
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold text-muted">Your Name *</label>
+                                <input id="feedbackName" name="name" required minlength="2" class="form-control form-control-sm" value="Sarah Jenkins" placeholder="Full Name">
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold text-muted">Email Address *</label>
+                                <input id="feedbackEmail" name="email" type="email" required class="form-control form-control-sm" value="sarah.jenkins@example.com" placeholder="name@example.com">
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold text-muted">Review Category</label>
+                                <select id="feedbackCategory" class="form-select form-select-sm">
+                  <option value="Pet Passport Tool" selected>Digital Pet Passport Generator</option>
+                  <option value="Veterinary Services">Veterinary Portal & Clinical Tools</option>
+                  <option value="Adoption Services">Rescue Sanctuary & Adoption</option>
+                  <option value="Products Catalog">Pet Care Essentials Catalog</option>
+                </select>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label small fw-bold text-muted">Your Review & Comments *</label>
+                                <textarea id="feedbackComment" name="feedback" required minlength="8" rows="4" class="form-control form-control-sm" placeholder="Tell us how FurEver Care has helped your companion...">The digital pet passport with photo upload and feeding portion calculator made caring for my Golden Retriever so organized and effortless!</textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-peach w-100 shadow-sm">
+                <i class="bi bi-send-fill me-1"></i> Submit Verified Review
+              </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <a class="footer-brand" href="../index.html"><i class="bi bi-heart-fill"></i> FurEver Care</a>
+                    <p>They Deserve Forever Love. A complete caring pet ecosystem.</p>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5>Explore</h5>
+                    <a href="pet-care.html">Pet Care</a>
+                    <a href="products.html">Products</a>
+                    <a href="veterinarian.html">Find a Vet</a>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5>Community</h5>
+                    <a href="shelter.html">Adoption</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Emergency</h5>
+                    <a class="btn btn-peach" href="emergency.html">Emergency Help</a>
+                </div>
+            </div>
+            <hr>
+            <small>© 2026 All right reserved</small>
+        </div>
+    </footer>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+    <button id="topBtn" class="top-btn"><i class="bi bi-arrow-up"></i></button>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/clock.js"></script>
+    <script src="../js/geolocation.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/feedback.js"></script>
+    <script src="../js/effects.js"></script>
+    <script src="../js/chatbot.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Buddy",
+    "species": "Dog",
+    "breed": "Golden Retriever",
+    "age": 3,
+    "vaccination": "Up to date",
+    "emoji": "🐶"
+  }
+]

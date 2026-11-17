@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Login | FurEver Care</title>
+
+    <link rel="icon" href="images/logo.jfif">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+
+<body>
+
+<section class="signup-section">
+
+    <div class="signup-container">
+
+        <div class="signup-info">
+
+            <span class="signup-badge">
+                <i class="bi bi-heart-fill"></i>
+                WELCOME BACK
+            </span>
+
+            <h2>
+                Welcome Back to
+                <span>FurEver Care</span>
+            </h2>
+
+            <p>
+                Login to your FurEver Care account and continue managing
+                your pets, appointments and care information.
+            </p>
+
+            <div class="signup-features">
+
+                <div>
+                    <i class="bi bi-shield-check"></i>
+                    <div>
+                        <strong>Safe & Secure</strong>
+                        <small>Your account stays protected</small>
+                    </div>
+                </div>
+
+                <div>
+                    <i class="bi bi-heart-fill"></i>
+                    <div>
+                        <strong>Pet First</strong>
+                        <small>Everything your pet needs</small>
+                    </div>
+                </div>
+
+                <div>
+                    <i class="bi bi-calendar-check"></i>
+                    <div>
+                        <strong>Easy Access</strong>
+                        <small>Manage your pet care easily</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="signup-card">
+
+            <div class="signup-card-header">
+
+                <div>
+                    <span>FUREVER CARE</span>
+                    <h3>Login Account</h3>
+                </div>
+
+                <div class="signup-icon">
+                    <i class="bi bi-paw"></i>
+                </div>
+
+            </div>
+
+            <form id="loginForm">
+
+                <div class="signup-field">
+
+                    <label>Email Address</label>
+
+                    <div class="signup-input">
+
+                        <i class="bi bi-envelope"></i>
+
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            placeholder="example@email.com"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+                <div class="signup-field">
+
+                    <label>Password</label>
+
+                    <div class="signup-input">
+
+                        <i class="bi bi-lock-fill"></i>
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            onclick="toggleLoginPassword()"
+                        >
+                            <i class="bi bi-eye"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="signup-submit text-black"
+                >
+                    Login to FurEver Care
+                    <i class="bi bi-arrow-right"></i>
+                </button>
+
+                <p class="signup-login">
+
+                    Don't have an account?
+
+                    <a href="signup.html">
+                        Create Account
+                    </a>
+
+                </p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/login.js"></script>
+
+</body>
+</html>
